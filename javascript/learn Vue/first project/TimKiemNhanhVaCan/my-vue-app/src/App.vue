@@ -1,20 +1,14 @@
 <template>
   <div :class="['hihi', statusButton]">
     <span :style="{ color: 'red', background: stkatusButton }">
-      {{ nameuser }}</span
-    >
+      {{ nameuser }}</span>
   </div>
   <div v-html="nameuser"></div>
 
   <div v-show="nameuser == 'tai Pham'">hihi</div>
   <hr />
 
-  <input
-    name="search"
-    placeholder="search items"
-    @:keyup="onInputSearch($event)"
-    :value="inputText"
-  />
+  <input name="search" placeholder="search items" @:keyup="onInputSearch($event)" :value="inputText" />
 
   <template v-for="item in dataNotification" :key="item._id">
     <div>{{ item.name || "" }}</div>
@@ -42,7 +36,7 @@ export default {
   data() {
     return {
       nameuser: "tai Pham22",
-      statusButton: "info",
+      statusButton: "info23332",
       dataNotification: [...DATA_USERS],
       inputText: "",
       timeStrigger: "",
@@ -55,6 +49,7 @@ export default {
       this.step += data;
     },
     onInputSearch(event) {
+      this.inputText;
       const callBack = () => {
         const inputValue = (event.target.value + "").trim();
         this.inputText = inputValue;
@@ -85,9 +80,11 @@ export default {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
